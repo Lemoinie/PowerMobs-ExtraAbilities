@@ -1,0 +1,7 @@
+name: PowerMobs-ExtraAbilities
+version: 1.0-SNAPSHOT
+main: com.test.MyPlugin
+api-version: '1.21'
+description: A Paper 1.21.11 plugin for PowerMobs.
+website: https://github.com/Lemoinie/PowerMobs-ExtraAbilities
+authors: [Lemoinie]

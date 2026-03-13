@@ -62,6 +62,7 @@ public class ExtraAbilities extends JavaPlugin {
             core.getAbilityManager().registerAbility(new ShieldBreakingAbility(core));
             core.getAbilityManager().registerAbility(new MeteorStrikeAbility(core));
             core.getAbilityManager().registerAbility(new MeteorShowerAbility(core));
+            core.getAbilityManager().registerAbility(new AdvancedAggroAbility(core));
             // Keep it short and simple
             getLogger().info("[PM-ExtraAbilities] Successfully registered ExtraAbilities to PowerMobs!");
         } else {

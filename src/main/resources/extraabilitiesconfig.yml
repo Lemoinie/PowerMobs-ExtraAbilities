@@ -206,3 +206,18 @@ abilities:
     delay-between-ticks: 10  # 0.5s between meteor falls
     increase-per-player: 5   # More meteors for every additional player
     damage: 8.0              # Damage per impact
+
+  # Advanced Aggro System: Uses threat and priority gauges to determine targets
+  advanced-aggro:
+    threat-range: 10.0       # Threat gain per ranged hit
+    threat-melee: 5.0        # Threat gain per melee hit
+    threat-heal: 6.0         # Threat gain for healing near mob
+    threat-closest-per-sec: 2.0 # Threat gain per second for being closest
+    threat-hit-by-mob: 4.0   # Threat gain for getting hit by the mob
+    priority-distance-large: 40.0 # Priority bonus if distance > 12
+    priority-run-away: 30.0  # Priority bonus for running away
+    priority-low-hp: 50.0    # Priority bonus if HP < 25%
+    priority-potion-used: 20.0 # Priority bonus if used potion recently
+    priority-weak-armor: 50.0 # Priority bonus for low armor/enchants
+    decay-threat-per-sec: 3.0 # Threat decay per second after 5s idle
+    decay-priority-per-sec: 5.0 # Priority decay per second after 5s idle

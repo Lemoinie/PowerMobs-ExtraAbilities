@@ -1,5 +1,5 @@
 name: PowerMobs-ExtraAbilities
-version: 1.0-SNAPSHOT
+version: 1.0
 main: com.test.ExtraAbilities
 api-version: '1.21'
 description: A Paper 1.21.11 plugin that adds extra abilities for PowerMobs.

@@ -1,7 +1,8 @@
 name: PowerMobs-ExtraAbilities
 version: ${version}
-main: com.test.MyPlugin
+main: com.test.ExtraAbilities
 api-version: '1.21'
-description: A Paper 1.21.11 plugin for PowerMobs.
+description: A Paper 1.21.11 plugin that adds extra abilities for PowerMobs.
 website: https://github.com/Lemoinie/PowerMobs-ExtraAbilities
 authors: [Lemoinie]
+depend: [PowerMobs]

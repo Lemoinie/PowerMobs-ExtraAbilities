@@ -1,0 +1,208 @@
+# PowerMobs-ExtraAbilities Configuration
+# These are global defaults. Mobs can override these in their specific config files.
+
+abilities:
+  # Void Pull: Periodically pulls nearby players towards the mob
+  void-pull:
+    radius: 10              # Radius in blocks to scan for players
+    strength: 0.5          # Strength of the pull vector
+    tick-rate: 10          # How often to pull (in ticks, 20 ticks = 1s)
+    use-attack-range: false # If true, radius is ignored and attack range is used
+
+  # Mount Crash: Knocks players off their mounts and slows them
+  mount-crash:
+    radius: 8              # Radius to scan for mounted players
+    slowness-duration: 100 # Duration of slowness in ticks
+    tick-rate: 20          # How often to check for players (20 ticks = 1s)
+
+  # Berserk: Boosts damage and speed when health drops low
+  berserk:
+    hp-threshold: 0.3      # Health percentage to trigger (0.3 = 30%)
+    damage-increase-percent: 50.0 # Percentage to increase damage by
+    speed-increase-percent: 30.0  # Percentage to increase speed by
+    duration: 10           # Duration in seconds
+    cooldown: 60           # Cooldown in seconds before it can trigger again
+
+  # Venom Bite: Chance to apply Poison effect on hit
+  venom-bite:
+    strength: 1            # Potion amplifier (1 = Level II)
+    duration: 200          # Duration in ticks
+    chance: 0.5            # Chance to trigger (0.0 to 1.0)
+
+  # Wither Touch: Chance to apply Wither effect on hit
+  wither-touch:
+    strength: 1            # Potion amplifier (1 = Level II)
+    duration: 200          # Duration in ticks
+    chance: 0.5            # Chance to trigger (0.0 to 1.0)
+
+  # Life Steal: Heals the mob when it deals damage
+  life-steal:
+    heal-amount: 3.0       # Amount of health to restore per hit
+    chance: 0.3            # Chance to trigger (0.0 to 1.0)
+
+  # Starvation Curse: Chance to apply Hunger effect on hit
+  starvation-curse:
+    strength: 2            # Potion amplifier (2 = Level III)
+    duration: 5            # Duration in seconds
+    chance: 0.3            # Chance to trigger (0.0 to 1.0)
+
+  # Dread Screech: Applies multiple debuffs to nearby players when health is low
+  dread-screech:
+    hp-threshold: 0.1      # Health percentage to trigger guaranteed screech
+    radius: 5.0            # Radius of the effect
+    chance-above-threshold: 0.05 # Chance to screech on hit when above threshold
+    chance-below-threshold: 0.0  # Chance to screech on hit when below (it's a 1-time trigger at threshold)
+    duration: 5            # Duration of debuffs in seconds
+    slowness-level: 3      # Level of slowness applied
+
+  # Tenacity: Reduces incoming damage when health is low
+  tenacity:
+    hp-threshold: 0.3      # Health percentage to trigger reduction
+    damage-reduction: 0.5  # Percentage of damage to block (0.5 = 50%)
+
+  # Quicksilver: Chance to gain a temporary speed boost
+  quicksilver:
+    level: 2               # Potion amplifier (2 = Level III)
+    duration: 5            # Duration in seconds
+    chance: 0.1            # Chance to trigger on hit
+    cooldown: 60           # Cooldown in seconds
+
+  # Domain Expansion: Creates an area that buffs the mob and debuffs players
+  domain-expansion:
+    radius: 10.0           # Radius of the domain
+    damage-increase: 0.5   # Damage buff for mob (0.5 = 50%)
+    damage-reduction: 0.5  # Damage reduction for players (0.5 = 50%)
+    chance: 0.05           # Chance to trigger on hit
+    duration: 15           # Duration in seconds
+    cooldown: 120          # Cooldown in seconds
+
+  # Explosive Death: Mob explodes when killed
+  explosive-death:
+    radius: 4.0            # Explosion radius
+    damage: 8.0            # Direct damage to nearby players
+    break-blocks: false    # Whether the explosion breaks blocks
+
+  # Armor Shatter: Chance to damage player armor on hit
+  armor-shatter:
+    durability-damage: 15  # Amount of durability to remove
+    chance: 0.3            # Chance to trigger
+
+  # Shadow Extraction: Chance to resurrect fallen mobs as loyal shadows
+  shadow-extraction:
+    chance: 0.3            # Chance to extract a shadow from a nearby death
+    radius: 8              # Radius to monitor for deaths
+    summon-hp: 5.0         # Health of the summoned shadow
+    summon-damage: 3.0     # Base damage of the summoned shadow
+
+  # Fear Aura: Constantly debuffs players in a radius with particles
+  fear-aura:
+    radius: 8.0            # Radius of the aura
+    slowness-amplifier: 0  # Slowness Level (0 = Level I)
+    weakness-amplifier: 0  # Weakness Level (0 = Level I)
+    duration-ticks: 100    # Effect refresh duration (100 = 5s)
+
+  # Repulsion Burst: Explodes and pushes players away when health is low
+  repulsion-burst:
+    hp-threshold: 0.3      # Health percentage to trigger
+    radius: 5.0            # Blast radius
+    knockback-strength: 2.0 # Force of the push
+    damage: 3.0            # Damage to players
+    mob-slowness-amp: 9    # Slowness level on the mob during recovery
+    mob-regen-amp: 4       # Regen level on the mob during recovery
+    effect-duration-ticks: 40 # Duration of recovery effects
+    cooldown: 120          # Cooldown in seconds
+
+  # Blood Pool: Chance to summon a damaging red zone on the ground
+  blood-pool:
+    summon-chance: 0.1     # Chance to spawn on attack
+    radius: 3.0            # Radius of the pool
+    stay-time-seconds: 3   # Time player must stand in to take damage
+    damage-percent: 0.2    # Percentage of player max HP dealt as true damage
+
+  # Crippling Strike: Attacks apply stacking slowness
+  crippling-strike:
+    hits-per-stack: 3      # Number of hits required to increase slowness level
+    max-stacks: 5          # Maximum slowness level (5 = Slowness V)
+    duration-ticks: 100    # Effect duration
+
+  # Chain Lightning: Strike multiple lightning bolts that scale with group size
+  chain-lightning:
+    chance: 0.1            # Chance to trigger on attack
+    radius: 10.0           # Radius to find targets
+    damage-multiplier: 0.2 # Damage increase per sequential strike (0.2 = 20%)
+
+  # Crushing Blow: Charges up, rushes target, and knocks them into walls
+  crushing-blow:
+    chance: 0.1             # Chance to trigger on hit
+    charge-ticks: 40        # Time to stand still (20 = 1s)
+    approach-speed: 0.5     # Move speed during rush phase
+    impact-damage: 10.0     # Damage on direct hit
+    knockback-strength: 2.5 # Force of the knockback
+    wall-collision-damage: 15.0 # Damage if player hits a block
+    cooldown: 15            # Cooldown in seconds
+
+  # Death Zone: Summons a fatal black field
+  death-zone:
+    summon-chance: 0.05     # 5% chance to spawn on attack
+    radius: 5.0             # Radius of the field
+    deadly-time-seconds: 15 # Seconds players can stay before dying
+    zone-duration-seconds: 30 # How long the field lasts
+
+  # Parry: Chance to block melee attacks and knock back the attacker
+  parry:
+    chance: 0.2             # 20% chance to trigger
+    knockback-strength: 1.0 # Force of the push on the attacker
+
+  # Potion Immunity: Mob ignores splash and lingering potions
+  potion-immunity: {}
+
+  # Potion Reflection: Thrown potions affect the thrower instead
+  potion-reflection:
+    chance: 1.0             # 100% chance to reflect by default
+
+  # Effect Purge: Periodically removes negative effects
+  effect-purge:
+    interval-ticks: 100     # Purge every 5 seconds
+
+  # Lava Walker: Immune to lava and fire
+  lava-walker: {}
+
+  # Fall Immunity: Ignores fall damage
+  fall-immunity: {}
+
+  # Aqua Anchor: Normal movement speed in water and ignore currents
+  aqua-anchor: {}
+
+  # Siege Breaker: Breaks blocks under players who trying to pillar up
+  siege-breaker:
+    check-interval-ticks: 20
+    min-height-diff: 2.0
+    horizontal-range: 5.0
+    max-blocks-per-check: 3
+
+  # Disarm: Chance to make the player drop their main hand weapon
+  disarm:
+    chance: 0.05             # 5% chance to disarm
+
+  # Shield Breaking: Chance to disable the player's shield
+  shield-breaking:
+    chance: 0.2              # 20% chance to disable
+    disable-time-ticks: 100  # How long the shield is disabled (20 = 1s, default 5s)
+
+  # Meteor Strike: Calls a meteor from the sky targeting the weakest player
+  meteor-strike:
+    cooldown-seconds: 180    # Time between meteor strikes
+    search-radius: 40.0      # Range to find players
+    warning-ticks: 40        # 2 second warning (20 = 1s)
+    damage: 10.0             # Explosion damage
+    knockback: 1.5           # Explosion knockback power
+
+  # Meteor Shower: Summons a barrage of meteors scaled by player count
+  meteor-shower:
+    cooldown-seconds: 180    # Time between showers
+    search-radius: 30.0      # Range to find players to trigger
+    base-count: 10           # Minimum number of meteors
+    spread-radius: 10.0      # How far meteors can land from the target
+    delay-between-ticks: 10  # 0.5s between meteor falls
+    increase-per-player: 5   # More meteors for every additional player
+    damage: 8.0              # Damage per impact

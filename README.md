@@ -1,6 +1,6 @@
 # PowerMobs-ExtraAbilities
 
-An add-on for the [PowerMobs](../PowerMobs) plugin, adding a vast array of high-quality, configurable custom abilities for your mobs.
+An add-on for the [PowerMobs](https://github.com/LittleExxGames/PowerMobs) plugin, adding a vast array of high-quality, configurable custom abilities for your mobs.
 
 ## Features
 - **Seamless Integration**: Automatically registers with PowerMobs.
@@ -11,36 +11,20 @@ An add-on for the [PowerMobs](../PowerMobs) plugin, adding a vast array of high-
 
 ## Abilities
 
-| Ability | ID | Description |
+PowerMobs-ExtraAbilities includes over 30 unique abilities categorized into Offensive, Defensive, Utility, and more. 
+
+> [!TIP]
+> **View the [Full Wiki](wiki.md) for detailed configuration options and mechanics for every ability.**
+
+| Category | Description | Examples |
 |---|---|---|
-| **Void Pull** | `void-pull` | Periodically pulls nearby players toward the mob. |
-| **Mount Crash** | `mount-crash` | Knocks players off their mounts (Horses, Camels, etc.) and slows them. |
-| **Berserk** | `berserk` | Massive damage and speed boost when health drops low. |
-| **Venom Bite** | `venom-bite` | Inflicts Poison on hit (configurable chance/strength). |
-| **Wither Touch** | `wither-touch` | Inflicts Wither on hit (configurable chance/strength). |
-| **Life Steal** | `life-steal` | Heals the mob based on damage dealt to players. |
-| **Starvation Curse**| `starvation-curse`| Inflicts Hunger on hit. |
-| **Dread Screech** | `dread-screech` | Debuffs players with Darkness, Slowness, and Fatigue in a radius. |
-| **Tenacity** | `tenacity` | Reduces all incoming damage by 50% when below 30% HP. |
-| **Quicksilver** | `quicksilver` | Chance to gain a significant temporary speed boost. |
-| **Domain Expansion**| `domain-expansion`| Creates a zone that buffs the mob and debuffs nearby players. |
-| **Explosive Death** | `explosive-death` | Mob explodes violently upon death. |
-| **Armor Shatter** | `armor-shatter` | Attacks have a chance to permanently damage player armor durability. |
-| **Shadow Extraction**| `shadow-extraction`| Resurrect nearby fallen mobs as loyal shadow minions. |
-| **Fear Aura** | `fear-aura` | Constant black particle field that slows and weakens nearby players. |
-| **Repulsion Burst**| `repulsion-burst` | Blasts players away with a shockwave when the mob's health is low. |
-| **Blood Pool** | `blood-pool` | Summons a red zone of boiling blood that deals % Max HP true damage. |
-| **Crippling Strike**| `crippling-strike`| Attacks apply stacking slowness, becoming heavier with every hit. |
-| **Chain Lightning** | `chain-lightning` | Strike lightning that scales in power with the number of players. |
-| **Crushing Blow** | `crushing-blow` | Charges a heavy attack that deals massive damage if the player hits a wall. |
-| **Death Zone** | `death-zone` | Creates a fatal area where staying too long results in instant death. |
-| **Parry** | `parry` | Chance to block melee damage and knock back the attacker. |
-| **Potion Immunity** | `potion-immunity` | Immune to effects from splash and lingering potions. |
-| **Potion Reflection**| `potion-reflection`| Chance to reflect thrown potions back at the thrower. |
-| **Effect Purge** | `effect-purge` | Periodically removes all negative potion effects. |
-| **Lava Walker** | `lava-walker` | Complete immunity to fire, lava, and magma damage. |
-| **Fall Immunity** | `fall-immunity` | Complete immunity to fall damage. |
-| **Aqua Anchor** | `aqua-anchor` | Move normally in water and ignore pushing currents. |
+| **Offensive** | Targeted attacks and debuffs | `crushing-blow`, `meteor-strike`, `disarm` |
+| **AoE & Zones** | Spatial control and area damage | `death-zone`, `blood-pool`, `meteor-shower` |
+| **Combat** | Mechanical advantages and counters | `advanced-aggro`, `shield-breaking`, `parry` |
+| **Defensive** | Immunities and survival tools | `tenacity`, `potion-reflection`, `lava-walker` |
+| **Mobility** | Movement and environmental buffs | `quicksilver`, `aqua-anchor`, `siege-breaker` |
+
+For a complete list of IDs and descriptions, please refer to the [Wiki](wiki.md).
 
 ## Installation
 
@@ -61,7 +45,7 @@ The add-on will automatically refresh its own configuration and re-inject it int
 
 ## Requirements
 - Paper 1.21.1+
-- [PowerMobs Core Plugin](../PowerMobs)
+- [PowerMobs Core Plugin](https://github.com/LittleExxGames/PowerMobs)
 
 ## Development
 To build the project:

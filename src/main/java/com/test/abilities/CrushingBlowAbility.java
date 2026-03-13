@@ -76,8 +76,9 @@ public class CrushingBlowAbility extends AbstractAbility implements Listener {
 
         // If currently rushing, handle the impact
         if (rushingMobs.contains(attacker.getUniqueId()) && event.getEntity() instanceof Player player) {
-            handleImpact(powerMob, attacker, player);
             rushingMobs.remove(attacker.getUniqueId());
+            event.setCancelled(true);
+            handleImpact(powerMob, attacker, player);
             return;
         }
 
@@ -152,8 +153,10 @@ public class CrushingBlowAbility extends AbstractAbility implements Listener {
         double kbPower = ValidationUtils.getValidDouble(powerMob, this.id, "knockback-strength", defaultKnockbackStrength, 0, 10);
         double wallDamage = ValidationUtils.getValidDouble(powerMob, this.id, "wall-collision-damage", defaultWallDamage, 0, 100);
 
-        // Standard hit damage
-        player.damage(damage, mob);
+        // Standard hit damage - only if player is alive
+        if (!player.isDead()) {
+            player.damage(damage, mob);
+        }
 
         // Knockback
         Vector dir = player.getLocation().toVector().subtract(mob.getLocation().toVector()).normalize();
@@ -187,10 +190,12 @@ public class CrushingBlowAbility extends AbstractAbility implements Listener {
 
             // Check for collision
             if (isCollidingWithBlock(player)) {
-                player.damage(wallDamage, source);
-                player.sendMessage(ChatColor.RED + "You slammed into a wall!");
-                player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 0.5f);
-                player.getWorld().spawnParticle(Particle.CRIT, player.getLocation(), 30, 0.5, 0.5, 0.5, 0.1);
+                if (!player.isDead() && player.isValid()) {
+                    player.damage(wallDamage, source);
+                    player.sendMessage(ChatColor.RED + "You slammed into a wall!");
+                    player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 0.5f);
+                    player.getWorld().spawnParticle(Particle.CRIT, player.getLocation(), 30, 0.5, 0.5, 0.5, 0.1);
+                }
                 this.cancel();
             }
         }

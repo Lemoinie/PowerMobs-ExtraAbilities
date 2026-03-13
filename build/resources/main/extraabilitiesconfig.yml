@@ -209,7 +209,6 @@ abilities:
 
   # Advanced Aggro System: Uses threat and priority gauges to determine targets
   advanced-aggro:
-    active: false            # Enable advanced aggro system (Active = green, Inactive = red)
     threat-range: 10.0       # Threat gain per ranged hit
     threat-melee: 5.0        # Threat gain per melee hit
     threat-heal: 6.0         # Threat gain for healing near mob
